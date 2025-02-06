@@ -1,32 +1,33 @@
 CC = gcc -Wall -Wextra -Werror
 
-SRC_DIR = ./srcs
 INCL_DIR = ./includes
+
+SRC_DIR = ./srcs
 SRC_NAMES = ft_putchar.c\
         	ft_swap.c\
         	ft_strlen.c\
         	ft_putstr.c\
         	ft_strcmp.c
 
-SRC = $(SRC_NAMES:%=$(SRC_DIR)/%.c)
-OBJ_FILES = $(SRC_FILES:%.c=%.o)
+SRC = 		$(addprefix $(SRC_DIR)/,$(SRC_NAMES))
+OBJ_FILES = $(SRC:%.c=%.o)
 
-EXE = libft.a
+NAME = libft.a
 
 
-all: $(EXE)
+all: $(NAME)
 
 $(SRC_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) -I $(INCL_DIR) -c -o $@ $<
 
-$(EXE): $(OBJ_FILES)
-	ar rcs $(EXE) ./srcs/*.o
+$(NAME): $(OBJ_FILES)
+	ar rcs $(NAME) $(OBJ_FILES)
 
 
 clean :
 	rm -f $(OBJ_FILES)
 
 fclean: clean
-	rm -f $(OUTPUT)
+	rm -f $(NAME)
 
 re: fclean all

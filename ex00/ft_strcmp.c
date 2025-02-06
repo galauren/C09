@@ -6,9 +6,10 @@
 /*   By: galauren <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 15:37:39 by galauren          #+#    #+#             */
-/*   Updated: 2025/01/20 15:40:10 by galauren         ###   ########.fr       */
+/*   Updated: 2025/02/06 10:14:07 by galauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 int	ft_strcmp(char *s1, char *s2)
 {
 	unsigned int	i;
